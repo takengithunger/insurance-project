@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shanthi-insurance-deploy
+  labels:
+    app: shanthi-insurance-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shanthi-insurance-deploy
+  template:
+    metadata:
+      labels:
+        app: shanthi-insurance-deploy
+    spec:
+      containers:
+      - name: shanthi-insurance-container
+        image: shanth19611356248/insurence_app
+        ports:
+        - containerPort: 8081
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: shanthi-insurance-np-service
+  labels:
+    app: - shanthi-insurance-deploy
+spec:
+  selector:
+    app: shanthi-insurance-deploy
+
+  type: NodePort
+  ports:
+  - nodePort: 31500
+    port: 8081
+    targetPort: 8081
