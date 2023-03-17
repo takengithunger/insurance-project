@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: shanthi-container
-        image: shanth19611356248/insurence_app:latest
+        image: shanth19611356248/insurence_app
         ports:
         - containerPort: 8080
 ---
