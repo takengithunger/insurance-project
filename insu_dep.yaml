@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: shanthi_ins-deploy
   labels:
-    app: shanthi_ins-app
+    app: shanthi_ins-deploy
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: shanthi_ins-app
+      app: shanthi_ins-deploy
   template:
     metadata:
       labels:
-        app: shanthi_ins-app
+        app: shanthi_ins-deploy
     spec:
       containers:
       - name: shanthi-container
@@ -25,10 +25,10 @@ kind: Service
 metadata:
   name: shanthi-service
   labels:
-    app: shanthi_ins-app
+    app: shanthi_ins-deploy
 spec:
   selector:
-    app: shanthi_ins-app
+    app: shanthi_ins-deploy
 
   type: NodePort
   ports:
