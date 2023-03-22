@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: shanthi_ins-deploy
+  name: shanthinsdeploy1
   labels:
-    app: shanthi_ins-deploy
+    app: shanthiinsdeploy
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: shanthi_ins-deploy
+      app: shanthiinseploy
   template:
     metadata:
       labels:
-        app: shanthi_ins-deploy
+        app: shanthiinsdeploy
     spec:
       containers:
-      - name: shanthi-container
+      - name: shanthicontainer
         image: shanth19611356248/insurence_app
         ports:
         - containerPort: 8080
@@ -23,12 +23,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: shanthi-service
+  name: shanthiservice
   labels:
-    app: shanthi_ins-deploy
+    app: shanthiinsdeploy
 spec:
   selector:
-    app: shanthi_ins-deploy
+    app: shanthiinsdeploy
 
   type: NodePort
   ports:
