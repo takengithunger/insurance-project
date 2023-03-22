@@ -8,7 +8,7 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: shanthiinseploy
+      app: shanthiinsdeploy
   template:
     metadata:
       labels:
